@@ -7,6 +7,7 @@ def main() -> None:
     "stopwords",
     "wordnet",
     "omw-1.4",
+    "rslp",
   ]
   for resource in resources:
     nltk.download(resource)
