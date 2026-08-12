@@ -1,5 +1,6 @@
 from nltk_nlp.domain.models import NLPResult
 from nltk_nlp.tokenizer.tokenizer import Tokenizer
+from nltk_nlp.tokenizer.sentence import SentenceTokenizer
 from nltk_nlp.normalization.lowercase import LowercaseNormalizer
 from nltk_nlp.normalization.stopwords import StopwordFilter
 from nltk_nlp.normalization.stemming import Stemmer
@@ -11,6 +12,7 @@ class NLPPipeline:
   def __init__(self) -> None:
 
     self.tokenizer = Tokenizer()
+    self.sentence_tokenizer = SentenceTokenizer()
     self.lowercase = LowercaseNormalizer()
     self.stopwords = StopwordFilter()
     self.stemmer = Stemmer()
@@ -19,7 +21,10 @@ class NLPPipeline:
 
   def process(self, text: str) -> dict:
 
-    # 1. Tokenização
+    # 1. Tokenização de sentenças
+    sentences = self.sentence_tokenizer.tokenize(text)
+
+    # 2. Tokenização de palavras
     tokens = self.tokenizer.tokenize(text)
 
     # 2. Lowercase
@@ -42,6 +47,7 @@ class NLPPipeline:
 
     return {
       "original": text,
+      "sentences": sentences,
       "tokens": tokens,
       "normalized": normalized,
       "without_stopwords": filtered,

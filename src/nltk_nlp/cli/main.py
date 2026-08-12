@@ -11,6 +11,9 @@ def main() -> None:
     print("\nTexto:")
     print(result["original"])
 
+    print("\nSentenças:")
+    print(result["sentences"])
+
     print("\nTokens:")
     print(result["tokens"])
 
