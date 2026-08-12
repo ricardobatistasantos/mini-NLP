@@ -1,0 +1,15 @@
+[project]
+name = "exemplo-09"
+version = "0.1.0"
+description = "Retrieval Híbrido"
+requires-python = ">=3.10"
+dependencies = [
+
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["nltk_nlp"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
