@@ -60,6 +60,9 @@ def main():
         "O app está dando erro ao abrir",
         "Não quero mais pagar esse plano",
         "Como faço um PIX para outra conta",
+        "Recebi 20 reais, ontem",
+        "Quero terminar minha conta",
+        "gostaria de saber mais sobre finanças pessoais",
     ]
 
     for text in test_texts:

@@ -31,20 +31,20 @@ RAG resolve ambos: busca informação atualizada em documentos e força o modelo
 
 ```
 ┌─────────────────────────────────────────────────────────┐
-│ INGESTÃO (offline, uma vez)                              │
-│                                                          │
-│ Documento → Chunking → Embedding → Vector Store          │
+│ INGESTÃO (offline, uma vez)                             │
+│                                                         │
+│ Documento → Chunking → Embedding → Vector Store         │
 └─────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────┐
-│ CONSULTA (runtime, por pergunta)                         │
-│                                                          │
-│ Query → Embedding → Busca → Chunks relevantes            │
-│                                     ↓                    │
-│                              Contexto montado            │
-│                                     ↓                    │
-│                              Prompt construído           │
-│                                     ↓                    │
+│ CONSULTA (runtime, por pergunta)                        │
+│                                                         │
+│ Query → Embedding → Busca → Chunks relevantes           │
+│                                     ↓                   │
+│                              Contexto montado           │
+│                                     ↓                   │
+│                              Prompt construído          │
+│                                     ↓                   │
 │                              LLM → Resposta             │
 └─────────────────────────────────────────────────────────┘
 ```
